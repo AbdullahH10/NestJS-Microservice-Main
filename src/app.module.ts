@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -9,7 +9,8 @@ import { ProductModule } from './product/product.module';
     MongooseModule.forRoot('mongodb://localhost:27017/main_test',{
       autoCreate: true
     }),
-    ProductModule
+    ProductModule,
+    HttpModule
   ],
   controllers: [AppController],
   providers: [AppService],
